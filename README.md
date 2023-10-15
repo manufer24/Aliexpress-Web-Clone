@@ -8,3 +8,4 @@ This is web practice using:
 - Tailwindcss
 - Prisma
 - Stripe
+- Supabase
