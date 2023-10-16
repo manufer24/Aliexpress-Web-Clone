@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
       public: {
-        STRIPE_KEY: process.env.STRIPE_PK_KEY
+        STRIPE_KEY: `${process.env.STRIPE_PK_KEY}`
       }
   },
   app: {
