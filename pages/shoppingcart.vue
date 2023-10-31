@@ -1,7 +1,7 @@
 <template>
     <MainLayout>
-        <div id="ShoppingCartPage" class="mt-4 max-w-[1200px] mx-auto px-2">
-            <div v-if="!userStore.cart.length" class="h-[500px] flex items-center justify-center">
+        <section id="ShoppingCartPage" class="mt-4 pt-10 sm:pt-0 max-w-[1200px] mx-auto px-2">
+            <article v-if="!userStore.cart.length" class="h-[500px] flex items-center justify-center">
                 <div class="pt-20">
                     <img 
                         class="mx-auto"
@@ -29,9 +29,9 @@
                         </NuxtLink>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div v-else class="md:flex gap-4 justify-between mx-auto w-full">
+            <article v-else class="md:flex gap-4 justify-between mx-auto w-full">
                 <div class="md:w-[65%]">
                     <div class="bg-white rounded-lg p-4">
                         <div class="text-2xl font-bold mb-2">
@@ -51,7 +51,9 @@
                                 @selectedRadio="selectedRadioFunc"
                             />
                         </div>
+                        
                     </div>
+
                 </div>
 
                 <div class="md:hidden block my-4"/>
@@ -64,6 +66,11 @@
                                 $ <span class="font-extrabold">{{ totalPriceComputed }}</span>
                             </div>
                         </div>
+                        <p 
+                            id="card-error" 
+                            role="alert" 
+                            class="text-red-700 text-center font-semibold" 
+                        />
                         <button 
                             @click="goToCheckout"
                             class="
@@ -83,6 +90,7 @@
                             Checkout
                         </button>
                     </div>
+                
 
                     <div id="PaymentProtection" class="bg-white rounded-lg p-4 mt-4">
 
@@ -102,8 +110,8 @@
 
                     </div>
                 </div>
-            </div>
-        </div>
+            </article>
+        </section>
     </MainLayout>
 </template>
 
@@ -126,6 +134,7 @@ const cards = ref([
     'applepay.png',
 ])
 
+
 const totalPriceComputed = computed(() => {
     let price = 0
     userStore.cart.forEach(prod => {
@@ -135,7 +144,6 @@ const totalPriceComputed = computed(() => {
 })
 
 const selectedRadioFunc = (e) => {
-
     if (!selectedArray.value.length) {
         selectedArray.value.push(e)
         return
@@ -150,6 +158,8 @@ const selectedRadioFunc = (e) => {
     })
 }
 
+
+
 const goToCheckout = () => {
     let ids = []
     userStore.checkout = []
@@ -157,12 +167,24 @@ const goToCheckout = () => {
     selectedArray.value.forEach(item => ids.push(item.id))
 
     let res = userStore.cart.filter((item) => {
+
         return ids.indexOf(item.id) != -1
     })
 
     res.forEach(item => userStore.checkout.push(toRaw(item)))
 
+    if (!selectedArray.value.length) {
+        showError('you need to select at least one item to checkout')
+        return
+    }
     return navigateTo('/checkout')
 }
+
+const showError = (errorMsgText) => {
+    let errorMsg = document.querySelector("#card-error");
+
+    errorMsg.textContent = errorMsgText;
+    setTimeout(() => { errorMsg.textContent = "" }, 4000);
+};
 
 </script>

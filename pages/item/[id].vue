@@ -1,26 +1,13 @@
 <template>
     <MainLayout>
-       <div id="ItemPage" class="mt-4 max-w-[1200px] mx-auto px-2">
-        <div class="md:flex gap-4 justify-between mx-auto w-full">
+       <section id="ItemPage" class="mt-4 pt-10 sm:pt-0 max-w-[1200px] mx-auto px-2">
+        <article class="md:flex gap-4 justify-between mx-auto w-full">
             <div class="md:w-[40%]">
                 <img 
                         v-if="currentImage"
                         class="rounded-lg object-fit"
                         :src="currentImage"
                     >
-
-                    <div v-if="images[0] !== ''" class="flex items-center justify-center mt-2">
-                        <div v-for="image in images">
-                            <img 
-                                @mouseover="currentImage = image"
-                                @click="currentImage = image"
-                                width="70"
-                                class="rounded-md object-fit border-[3px] cursor-pointer"
-                                :class="currentImage === image ? 'border-[#FF5353]' : ''"
-                                :src="image"
-                            >
-                        </div>
-                    </div>
             </div>
             <div class="md:w-[60%] bg-white p-3 rounded-lg">
                 <div v-if="product && product.data">
@@ -81,8 +68,8 @@
                         <div v-else>Add to Cart</div>
                     </button>
             </div>
-        </div>
-       </div>
+        </article>
+       </section>
     </MainLayout>
 </template>
 

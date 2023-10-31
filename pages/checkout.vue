@@ -1,7 +1,7 @@
 <template>
     <MainLayout>
-        <div id="CheckoutPage" class="mt-10 max-w-[1200px] mx-auto px-2">
-            <div class="md:flex gap-4 justify-between mx-auto w-full">
+        <section id="CheckoutPage" class="mt-10 max-w-[1200px] mx-auto px-2">
+            <article class="md:flex gap-4 justify-between mx-auto w-full">
                 <div class="md:w-[65%]">
                     <div class="bg-white rounded-lg p-4">
                         <div class="text-xl font-semibold mb-2">Shipping Address</div>
@@ -131,8 +131,8 @@
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
+            </article>
+        </section>
     </MainLayout>
 </template>
 
@@ -233,9 +233,9 @@ const stripeInit = async () => {
 } 
 
 const pay = async () => {
-    if (currentAddress.value && currentAddress.value.data == '') {
+    if (currentAddress.value && currentAddress.value.data == undefined) {
         showError('Please add shipping address')
-        return 
+        return
     }
     isProcessing.value = true
     
@@ -276,7 +276,7 @@ const showError = (errorMsgText) => {
     let errorMsg = document.querySelector("#card-error");
 
     errorMsg.textContent = errorMsgText;
-    setTimeout(() => { errorMsg.textContent = "" }, 4000);
+    setTimeout(() => { errorMsg.textContent = "" }, 5000);
 };
 
 

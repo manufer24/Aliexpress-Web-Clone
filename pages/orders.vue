@@ -1,7 +1,7 @@
 <template>
     <MainLayout>
-        <div id="OrdersPage" class="mt-4 max-w-[1200px] mx-auto px-2 min-h-[50vh]">
-            <div class="bg-white w-full p-6 min-h-[150px]">
+        <section id="OrdersPage" class="mt-4 pt-10 sm:pt-0 max-w-[1200px] mx-auto px-2 min-h-[50vh]">
+            <article class="bg-white w-full p-6 min-h-[150px]">
                 <div class="flex items-center text-xl">
                     <Icon name="carbon:delivery" color="#5FCB04" size="35"/>
                     <span class="pl-4">Orders</span>
@@ -35,8 +35,8 @@
                 <div v-else class="flex items-center justify-center">
                     You have no order history
                 </div>
-            </div>
-        </div>
+            </article>
+        </section>
     </MainLayout>
 </template>
 

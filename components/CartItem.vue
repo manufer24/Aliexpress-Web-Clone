@@ -4,14 +4,15 @@
             <div
                 @mouseenter="isHover = true"
                 @mouseleave="isHover = false"
-                class="flex items-center justify-start p-0.5 cursor-pointer"
+                class="flex flex-col items-center justify-start mr-2 w-[60px] cursor-pointer"
             >
+                <p class="text-xs w-full pb-2">select item</p>
                 <div
                 @click="isSelected = !isSelected"
-                    class=" flex items-center justify-center h-[20px] w-[20px] rounded-full border mr-5 ml-2"
+                    class="flex items-center justify-center h-[20px] w-[20px] rounded-full border-2 mr-5 ml-2"
                     :class="[
-                        isHover ? 'border-[#FD374F]' : 'border-gray-300',
-                        isSelected ? 'bg-[#FD374F]' : ''
+                        isHover ? 'border-[#FD374F]' : 'border-gray-500',
+                        isSelected ? 'bg-[#FD374F]': ''
                     ]"
                 >
                     <div class="h-[8px] w-[8px] rounded-full bg-white" />

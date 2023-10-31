@@ -1,6 +1,6 @@
 <template>
-    <div id="MenuOverlay" class="fixed z-50 bottom-0 h-full w-full bg-white px-3">
-        <div class="flex items-center justify-between py-5">
+    <section id="MenuOverlay" class="fixed z-50 bottom-0 h-full w-full bg-white px-3">
+        <article class="flex items-center justify-between py-5">
             <NuxtLink to="/" @click="userStore.isMenuOverlay = false">
                 <img 
                     width="170"
@@ -15,9 +15,9 @@
             >
                 <Icon name="mdi:close" size="30"/>
             </button>
-        </div>
+        </article>
 
-        <div class="flex items-center justify-between pt-5">
+        <article class="flex items-center justify-between pt-5">
             <ul class="w-full">
 
                 <li 
@@ -117,16 +117,16 @@
                     </div>
                 </li>
                 </ul>
-        </div>
-    </div>
+        </article>
+    </section>
 </template>
 
 <script setup>
 import { useUserStore } from '~/stores/user';
 const userStore = useUserStore()
 
-// const client = useSupabaseClient()
-// const user = useSupabaseUser()
+const client = useSupabaseClient()
+const user = useSupabaseUser()
 
 const goTo = (url) => {
     userStore.isMenuOverlay = false

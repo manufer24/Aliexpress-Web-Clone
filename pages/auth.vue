@@ -1,12 +1,12 @@
 <template>
-    <div id="AuthPage" class="w-full h-[100vh] bg-white">
-        <div class="w-full flex items-center justify-center p-5 border-b border-b-gray-300">
+    <section id="AuthPage" class="w-full h-[100vh] bg-white">
+        <article class="w-full flex items-center justify-center p-5 border-b border-b-gray-300">
             <NuxtLink to="/" class="min-w-[170px]">
                 <img width="170" src="/AliExpress-logo.png" alt="aliexpres logo">
             </NuxtLink>
-        </div>
-        <div class="max-w-[400px] mx-auto px-2">
-            <div class="text-center my-6">Login / Register</div>
+        </article>
+        <article class="max-w-[400px] mx-auto px-2">
+            <h2 class="text-center my-6">Login / Register</h2>
 
             <button 
                 @click="login('google')"
@@ -25,7 +25,7 @@
                 "
             >
                 <img class="w-full max-w-[30px]" src="/google-logo.png" alt="Google logo">
-                <div>Google</div>
+                <h3>Google</h3>
             </button>
 
             <button 
@@ -46,10 +46,10 @@
                 "
             >
                 <img class="w-full max-w-[30px]" src="/github-logo.png" alt="GitHub logo">
-                <div>Github</div>
+                <h3>Github</h3>
             </button>
-        </div>
-    </div>
+        </article>
+    </section>
 </template>
 
 <script setup>

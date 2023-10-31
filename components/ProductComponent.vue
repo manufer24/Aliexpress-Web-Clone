@@ -1,5 +1,3 @@
-
-import { NuxtLink } from '#build/components';
 <template>
     <div
         :id="`ProductComponent${product.id}`"
@@ -7,15 +5,20 @@ import { NuxtLink } from '#build/components';
             bg-white 
             inline-block 
             rounded 
-            hover:shadow-[0_0_10px_3px_rgba(0,0,0,0.15)] 
-            cursor-pointer
+            sm:hover:shadow-[0_0_10px_3px_rgba(0,0,0,0.15)]
+            sm:hover:border-4
+            sm:border-orange-500
+            sm:transition-shadow
+            sm:transition-colors 
+            cursor-pointer 
+            p-2
         "
     >
         <NuxtLink
         :to="`/item/${product.id}`"
         >
         <img 
-                class="rounded-t "
+                class="rounded-t"
                 :src="product.url"
                 alt="product image"
         >

@@ -1,10 +1,10 @@
 <template>
     <MainLayout>
-        <div 
+        <section 
             id="AddressPage" 
             class="mt-4 max-w-[500px] mx-auto px-2"
         >
-            <div class="mx-auto bg-white rounded-lg p-3">
+            <article class="mx-auto bg-white rounded-lg p-3">
                 <div class="text-xl text-bold mb-2">Address Details</div>
                 <form @submit.prevent="submit()">
                     <TextInput 
@@ -72,8 +72,8 @@
                         />
                     </button>
                 </form>
-            </div>
-        </div>
+            </article>
+        </section>
     </MainLayout>
 </template>
 
@@ -141,7 +141,7 @@ const submit = async () => {
         }
     }
 
-    if (error.value) {
+    if (error.value) { 
         isWorking.value = false
         return
     }
