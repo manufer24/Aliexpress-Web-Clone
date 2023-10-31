@@ -1,6 +1,6 @@
 <template>
     <MainLayout>
-        <div id="CheckoutPage" class="mt-4 max-w-[1200px] mx-auto px-2">
+        <div id="CheckoutPage" class="mt-10 max-w-[1200px] mx-auto px-2">
             <div class="md:flex gap-4 justify-between mx-auto w-full">
                 <div class="md:w-[65%]">
                     <div class="bg-white rounded-lg p-4">
@@ -69,6 +69,16 @@
                             <div class="">Total Shipping</div>
                             <div class="">Free</div>
                         </div>
+                        <div>
+                           <p class="font-semibold pb-2">
+                            you should use this card number for place an order:
+                           </p> 
+                            <ul>
+                                <li class="before:content-['a)'] before:font-semibold before:pr-2">4242 4242 4242 4242</li>
+                                <li class="before:content-['b)'] before:font-semibold before:pr-2">any date in the future</li>
+                                <li class="before:content-['c)'] before:font-semibold before:pr-2">segurity code: 123</li>
+                            </ul>
+                        </div>
 
                         <div class="border-t" />
 
@@ -129,6 +139,8 @@
 <script setup>
 import MainLayout from '~/layouts/MainLayout.vue';
 import { useUserStore } from '~/stores/user';
+import { loadStripe } from '@stripe/stripe-js';
+
 const userStore = useUserStore()
 const user = useSupabaseUser()
 const route = useRoute()
@@ -176,19 +188,24 @@ watch(() => total.value, () => {
     }
 })
 
+
 const stripeInit = async () => {
     const runtimeConfig = useRuntimeConfig()
-    stripe = Stripe(`${runtimeConfig.stripePk}`);
 
-    let res = await $fetch('/api/stripe/paymentintent', {
+    stripe = await loadStripe(`${runtimeConfig.public.stripePK}`)
+
+   let res = await $fetch('/api/stripe/paymentintent', {
         method: 'POST',
         body: {
             amount: total.value,
         }
     })
+
     clientSecret = res.client_secret
+    
 
     elements = stripe.elements();
+
     var style = {
         base: {
             fontSize: "18px",

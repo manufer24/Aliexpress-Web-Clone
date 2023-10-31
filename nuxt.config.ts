@@ -11,9 +11,9 @@ export default defineNuxtConfig({
   supabase: {
     redirect: false
   },
-  runtimeConfig: {
+  runtimeConfig: { 
       public: {
-        STRIPE_KEY: process.env.STRIPE_PK_KEY
+        stripePK: process.env.STRIPE_PK_KEY
       }
   },
   app: {

@@ -139,6 +139,7 @@
                         </div>
                     </div>
                 </div>
+
                 
                 <NuxtLink 
                     to="/shoppingcart"
@@ -185,6 +186,10 @@
                     <Icon name="radix-icons:hamburger-menu" size="33" />
                 </button>
             </div>
+        </div>
+
+        <div class="font-bold text-xl bg-green-200 text-black p-2 flex justify-center">
+            this is a practice website
         </div>
     </div>
 

@@ -27,7 +27,7 @@ async function seedProducts() {
         title: "Women's White Shoes",
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         url: "https://picsum.photos/id/21/800/800",
-        price: 9999
+        price: 7899
       },
     });
 
@@ -44,7 +44,7 @@ async function seedProducts() {
       data: {
         title: "Cuban Mug",
         description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        url: "https://picsum.photos/id/24/800/800",
+        url: "https://picsum.photos/id/30/800/800",
         price: 1299
       },
     });
