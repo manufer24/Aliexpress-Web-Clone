@@ -18,8 +18,8 @@ useSeoMeta({
   ogTitle: 'Aliexpress Web Clone',
   description: 'This is a web practice similar to Aliexpress, you can test some of the e-commerce web. Have fun testing it.',
   ogDescription: 'This is a web practice similar to Aliexpress, you can test some of the e-commerce web. Have fun testing it.',
-  ogImage: './public/home-page-aliexpress-clone.jpg',
-  twitterCard: './public/home-page-aliexpress-clone.jpg',
+  ogImage: 'https://aliexpress-web-clone.vercel.app/public/home-page-aliexpress-clone.jpg',
+  twitterCard: 'https://aliexpress-web-clone.vercel.app/public/home-page-aliexpress-clone.jpg',
 })
 
 const userStore = useUserStore()
