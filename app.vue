@@ -12,8 +12,17 @@
 
 <script setup>
 import { useUserStore } from '~/stores/user';
-const userStore = useUserStore()
 
+useSeoMeta({
+  title: 'Aliexpress Web Clone',
+  ogTitle: 'Aliexpress Web Clone',
+  description: 'This is a web practice similar to Aliexpress, you can test some of the e-commerce web. Have fun testing it.',
+  ogDescription: 'This is a web practice similar to Aliexpress, you can test some of the e-commerce web. Have fun testing it.',
+  ogImage: './public/home-page-aliexpress-clone.jpg',
+  twitterCard: './public/home-page-aliexpress-clone.jpg',
+})
+
+const userStore = useUserStore()
 const route = useRoute()
 
 let windowWidth = ref(process.client ? window.innerWidth : '')
